@@ -12,6 +12,8 @@
         <!--=============== css  ===============-->    
         <link type="text/css" rel="stylesheet" href="css/reset.css">
         <link type="text/css" rel="stylesheet" href="css/plugins.css">
+		<link type="text/css" rel="stylesheet" href="map/leaflet/leaflet.css" />
+		<link type="text/css" rel="stylesheet" href="map/assets/custom-maps.css" />
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link type="text/css" rel="stylesheet" href="css/style-dark.css">
         <!--=============== favicons ===============-->
@@ -49,7 +51,7 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#ws">Rekam Jejak </a>
+                                <a href="#image2d">Rekam Jejak </a>
                             </li>
                             <li>
                                 <a href="#wissemu">WISSEMU</a>
@@ -67,6 +69,31 @@
             </header>
             <!-- header end -->
             <!-- wrapper  -->
+			<div id="image2d">
+				<h2 class="title-map">Wandering Season<br>Mahitala Unpar<br>1974-2018</h2>
+				<div class="legend-map">
+					<li><img src="map/images/marker-grey.png"><p>Ekspedisi Panjat Tebing</p></li>
+					<li><img src="map/images/marker-yellow.png"><p>Ekspedisi Penelusuran Goa</p></li>
+					<li><img src="map/images/marker-green.png"><p>Ekspedisi Pendakian Gunung</p></li>
+					<li><img src="map/images/marker-red.png"><p>Ekspedisi Olahraga Arus Deras</p></li>
+					<li><img src="map/images/marker-blue.png"><p>Ekspedisi Penyelaman Laut</p></li>
+					<li><img src="map/images/marker-orange.png"><p>Ekspedisi Pengamatan Masyarakat Tradisional</p></li>
+				</div>
+			</div>
+			<div class="detail-rekam-jejak">
+				<div class="image-map">
+					<img src="" alt="">
+				</div>
+				<div class="text-map">
+					<button type="button" class="close-detail-rekam"><i class="fa fa-remove"></i></button>
+					<h2 id="title"></h2>
+					<div class="meta-map">
+						<li><span>Location :</span><p id="location"></p></li>
+						<li><span>Year :</span><p id="year"></p></li>
+					</div>
+					<div class="description-map" id="description"></div>
+				</div>
+			</div>
             <div id="wrapper">
                 <div id="wissemu"></div>
                 <!--content -->	
@@ -440,6 +467,10 @@
         <script src="js/wow.min.js"></script>
         <!-- Custom Theme JavaScript -->
         <script src="js/creative.js"></script>
+		<script src="map/leaflet/leaflet.js"></script>
+		<script src="map/assets/geo.js"></script>
+		<script src="map/assets/datarekamjejak.js"></script>
+		<script src="map/assets/script.js"></script>
 
         <link rel="stylesheet" href="./wow_book/wow_book.css" type="text/css" />
         <style>

@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Ek+Mukta:200,300,400,500,600,700,800&subset=devanagari,latin-ext');
+#image2d {
+	font-family: 'Ek Mukta', sans-serif;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	background: #103246;
+	margin: 0;
+}
+body *{
+	box-sizing: border-box;
+}
+.custom-marker{
+	width: 100%;
+	height: 100%;
+	position:relative;
+}
+.shadow-marker{
+	width: 20.5px !important;
+    height: 20.5px !important;
+    margin-top: -35px;
+}
+.marker-custom{
+	border-radius: 100%;
+	box-shadow: 1px 1px 1px #000;
+}
+.marker-grey{
+	background-color: #898989;
+}
+.marker-yellow{
+	background-color: #f0ca6e;
+}
+.marker-green{
+	background-color: #53bc77;
+}
+.marker-red{
+	background-color: #ab1f31;
+}
+.marker-blue{
+	background-color: #5bb7d3;
+}
+.marker-orange{
+	background-color: #fd6302;
+}
+.detail-rekam-jejak.open{
+	position: fixed;
+	z-index:1111;
+	width: 100%;
+	height: 100%;
+}
+.detail-rekam-jejak .image-map img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.detail-rekam-jejak .image-map{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: -50%;
+	width: 50%;
+	height: 100%;
+	background: #0000004f;
+	z-index: 111111111;
+	box-sizing: border-box;
+	transition: all 0.6s;
+}
+.detail-rekam-jejak.open .image-map{
+	left: 0px;
+}
+.detail-rekam-jejak .text-map{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 50%;
+	height: 100%;
+	right: -50%;
+	background: #1b1b1b;
+	z-index: 1111;
+	padding: 100px;
+	color: #fff;
+	box-sizing: border-box;
+	transition: all 0.6s;
+}
+.detail-rekam-jejak.open .text-map{
+	right
+	: 0px;
+}
+.detail-rekam-jejak .text-map h2{
+	margin: 0px;
+	margin-bottom: 30px;
+	line-height: 32px;
+	padding-bottom: 15px;
+	position: relative;
+	font-size: 30px;
+	text-align: left;
+}
+.detail-rekam-jejak .text-map h2:before{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 75px;
+	height: 4px;
+	background: #f6c405;
+	bottom: 0px;
+}
+.detail-rekam-jejak .text-map .meta-map{
+	margin: 0px;
+	display: table;
+	margin-bottom: 10px;
+	width: 100%;
+}
+.detail-rekam-jejak .text-map .meta-map li{
+	list-style: none;
+}
+.detail-rekam-jejak .text-map .meta-map li span{
+	font-weight: 800;
+	display: block;
+	font-size: 18px;
+	float: left;
+	margin-right: 10px;
+}
+.detail-rekam-jejak .text-map .meta-map li p{
+	margin: 0px;
+	font-size: 16px;
+	line-height: 30px;
+	text-align: left;
+}
+.detail-rekam-jejak .text-map .description-map{
+	height: 300px;
+	overflow-y: scroll;
+	padding-right: 15px;
+}
+
+.detail-rekam-jejak .text-map .description-map::-webkit-scrollbar {
+	width: 5px;
+}
+
+.detail-rekam-jejak .text-map .description-map::-webkit-scrollbar-track {
+	background: #dddddd1c;
+	opacity: 0.5;
+}
+
+.detail-rekam-jejak .text-map .description-map::-webkit-scrollbar-thumb {
+	background: #f6c405; 
+}
+
+.detail-rekam-jejak .text-map .description-map::-webkit-scrollbar-thumb:hover {
+	background: #f6c405; 
+}
+.detail-rekam-jejak .text-map .description-map p{
+	text-align: justify;
+	margin-top: 0px;
+}
+.close-detail-rekam{
+	position: absolute;
+	top: 15px;
+	width: 40px;
+	height: 40px;
+	background: #f6c405;
+	border-radius: 100%;
+	border: 0px;
+	color: #000;
+	font-weight: 800;
+	right: 15px;
+	font-size: 20px;
+	outline: none !important;
+	cursor: pointer;
+}
+.leaflet-tooltip{
+	width: 160px;
+    white-space: normal;
+    background: #f0ca6e;
+    color: #303030;
+    opacity: 1 !important;
+    text-align: center;
+    border-color: #cca23d;
+    border-radius: 0px;
+}
+.leaflet-tooltip-top:before {
+    border-top-color: #f0ca6e;
+}
+.title-map{
+	z-index: 1111;
+	position: absolute;
+	bottom: 60px;
+	left: 50px;
+	color: #fff;
+	font-size: 33px;
+	text-align: left;
+	line-height: 40px;
+	font-weight: 600;
+}
+.legend-map{
+	bottom: 50px;
+	width: 230px;
+	position: absolute;
+	max-height: 225px;
+	right: 50px;
+	background: #202020c2;
+	border-radius: 6px;
+	z-index: 1111;
+	padding: 15px;
+}
+.legend-map li{
+	list-style: none;	
+	display: block;
+}
+.legend-map li img{
+	width: 10px;
+	float: left;
+	margin-right: 10px;
+}
+.legend-map li p{
+	padding-left: 22px;
+	padding-bottom: 7px;
+	line-height: 15px;
+	font-size: 12px;
+}
+.legend-map li:last-child p{
+	padding-bottom: 0px;
+}
+@media (max-width: 1000px) AND (min-width: 768px){
+	.detail-rekam-jejak .image-map{
+		left: -40%;
+		width: 40%;
+	}
+	.detail-rekam-jejak .text-map{
+		right: -60%;
+		width: 60%;
+		padding: 80px;
+	}
+}
+@media (max-width: 767px){	
+	.detail-rekam-jejak .image-map{
+		left: -100%;
+		width: 100%;
+	}
+	.detail-rekam-jejak .text-map{
+		right: -100%;
+		width: 100%;
+		background: #1b1b1bb8;
+	}
+}
+
+@media (max-width: 480px){	
+	.detail-rekam-jejak .text-map{
+		padding: 60px 30px;
+	}
+}
