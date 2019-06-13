@@ -44,7 +44,7 @@ body *{
 }
 .detail-rekam-jejak.open{
 	position: fixed;
-	z-index:1111;
+	z-index:11111;
 	width: 100%;
 	height: 100%;
 }
@@ -61,12 +61,13 @@ body *{
 	width: 50%;
 	height: 100%;
 	background: #0000004f;
-	z-index: 111111111;
+	z-index: 111111;
 	box-sizing: border-box;
 	transition: all 0.6s;
 }
 .detail-rekam-jejak.open .image-map{
 	left: 0px;
+	width: 51%;
 }
 .detail-rekam-jejak .text-map{
 	position: fixed;
@@ -76,7 +77,7 @@ body *{
 	height: 100%;
 	right: -50%;
 	background: #1b1b1b;
-	z-index: 1111;
+	z-index: 111111;
 	padding: 100px;
 	color: #fff;
 	box-sizing: border-box;

@@ -202,7 +202,133 @@
             }
         }
     }
- 	setUpCarouselSlider();
+    setUpCarouselSlider();
+
+    function setAngkatanList() {
+        return dataangkatan.map((data, index) => {
+            $(".fw-angkatan .swiper-wrapper").append(`
+                <div class="swiper-slide angkatan" data-angkatan="`+index+`">
+                    <div class="flag-image">
+                        <img src="`+data.image+`"   alt="`+data.name+`">
+                        <div class="flag-wave"></div>
+                    </div>
+                    <a href="javascript:;" class="box-media-zoom"><i class="fal fa-search"></i></a>
+                    <div class="thumb-info">
+                        <h3>`+data.name+`</h3>
+                        <p>`+data.year+`</p>
+                    </div>
+                </div>
+            `);
+        });
+    }
+     
+    function setUpAngkatanSlider() {
+        $('.fw-angkatan .swiper-wrapper').addClass('no-horizontal-slider');
+        console.log($(".fw-angkatan").length);
+        if ($(".fw-angkatan").length > 0) {      
+            setAngkatanList();
+            if ($(window).width() >= 640 && sAngkatan == undefined)
+            {                
+                var totalangkatan = $(".fw-angkatan .swiper-slide").length;
+                var mouseangkatan = $(".fw-angkatan").data("mousecontrol");
+                var sAngkatan = new Swiper(".fw-angkatan .swiper-container", {
+                    preloadImages: false,
+                    loop: false,
+                    freeMode: false,
+                    slidesPerView: 'auto',
+                    spaceBetween: 10,
+                    grabCursor: false,
+                    allowTouchMove: false,
+                    mousewheel: mouseangkatan,
+                    speed: 1400,
+                    direction: "horizontal",
+                    scrollbar: {
+                        el: '.hs_init',
+                        draggable: true,
+                    },
+                    effect: "slide",
+                    pagination: {
+                        el: '.fw-carousel-counter',
+                        type: 'fraction',
+                        renderFraction: function(currentClass) {
+                            return '<span class="' + currentClass + '"></span>' + '' + '<span class="j2total">' + totalangkatan + '</span>';
+                        }
+                    },
+                    navigation: {
+                        nextEl: '.fw-carousel-button-next',
+                        prevEl: '.fw-carousel-button-prev',
+                    },
+                    on: {
+                        resize: function() {
+                            if ($(window).width() < 640) {
+                                sAngkatan.update();
+                            }
+                        },
+                    }
+                });
+                $(".fw-angkatan.thumb-contr .swiper-slide img").each(function() {
+                    var ccasdc = $(this).attr("src");
+                    $("<div class='thumb-img'><img src='" + ccasdc + "'></div>").appendTo(".thumbnail-wrap");
+                });
+                $(".thumb-img").on('click', function() {
+                    sAngkatan.slideTo($(this).index(), 500);
+                    hideThumbnails();
+                });
+            }
+        }
+        if ($(window).width() < 640 && sAngkatan !== undefined)
+        {
+            sAngkatan.destroy();
+            sAngkatan = undefined;
+            $('.fw-angkatan .swiper-wrapper').removeAttr('style').addClass('no-horizontal-slider');
+            $('.swiper-slide').removeAttr('style');
+
+        }
+    }
+    setUpAngkatanSlider();
+
+    $(document).on("click",".angkatan-modal button.btn-close", function(){
+        $(".angkatan-modal-bg").fadeOut(500);
+        $(".angkatan-modal").fadeOut(500);
+        setTimeout(function(){
+            $(".angkatan-modal-bg").remove();
+            $(".angkatan-modal").remove();
+        },600);
+    });
+
+    $(document).on("click",".fw-angkatan .swiper-slide.angkatan",function(){
+        var indexAngkatan = $(this).data("angkatan");
+        var detailAngkatan = dataangkatan[indexAngkatan];
+        var anggotaList = "";
+        detailAngkatan.member.map(detail => {
+            anggotaList += "<li>"+detail+"</li>";
+        });
+        $("body").append(`
+            <div class="angkatan-modal-bg"></div>
+            <div class="angkatan-modal">
+                <div class="modal-body">
+                    <button type="button" class="btn-close"><i class="fa fa-times"></i></button>
+                    <div class="angkatan-modal-header">
+                        <div class="angkatan-modal-image">
+                            <div class="flag-image">
+                                <img src="`+detailAngkatan.image+`"   alt="`+detailAngkatan.name+`">
+                                <div class="flag-wave"></div>
+                            </div>
+                        </div>
+                        <h2 class="title">`+detailAngkatan.name+`</h2>
+                        <span class="year">`+detailAngkatan.year+`</span>
+                    </div>
+                    <div class="angkatan-modal-anggota">
+                        <b>Anggota</b>
+                        <ul>
+                            `+anggotaList+`
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        `);
+    });
+
      if ($(".fs-slider").length > 0) {
          var mouseContr2 = $(".fs-slider").data("mousecontrol2");
          var j3 = new Swiper(".fs-slider .swiper-container", {
