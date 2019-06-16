@@ -224,7 +224,6 @@
      
     function setUpAngkatanSlider() {
         $('.fw-angkatan .swiper-wrapper').addClass('no-horizontal-slider');
-        console.log($(".fw-angkatan").length);
         if ($(".fw-angkatan").length > 0) {      
             setAngkatanList();
             if ($(window).width() >= 640 && sAngkatan == undefined)

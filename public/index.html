@@ -10,8 +10,10 @@
         <meta name="description" content=""/>
 
         <!--=============== css  ===============-->    
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css'>
         <link type="text/css" rel="stylesheet" href="css/reset.css">
         <link type="text/css" rel="stylesheet" href="css/plugins.css">
+        <link type="text/css" rel="stylesheet" href="css/timeline.css">
 		<link type="text/css" rel="stylesheet" href="map/leaflet/leaflet.css" />
 		<link type="text/css" rel="stylesheet" href="map/assets/custom-maps.css" />
         <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -156,7 +158,7 @@
                                     Youtube code 
                                     
                                         <div  class="background-youtube" data-vid="Hg5iNVSp2z8" data-mv="1"> </div> -->
-                                <div class="mob-bg bg" data-bg="images/bg/3.jpg" style="background-image: url(&quot;images/bg/3.jpg&quot;);"></div>
+                                <div class="mob-bg bg" data-bg="images/bg/caving_p.jpg" style="background-image: url(&quot;images/bg/climbing_p.jpg&quot;);"></div>
                             </div>
                         </div>
 
@@ -259,7 +261,7 @@
                                 <div class="mousey">
                                     <div class="scroller"></div>
                                 </div>
-                                <span>Scroll down or  Swipe</span>
+                                <span>Scroll down or Swipe</span>
                             </div>
                             <div class="fs-controls_wrap">
                                 <div class="fw_cb fw-carousel-button-prev"><i class="fal fa-angle-left"></i></div>
@@ -282,6 +284,92 @@
                 <!--share-wrapper end-->
             </div>
             <!-- wrapper end -->
+            <div class="wrapper">
+                <!--Timeline carousel-->
+                <h1>TIMELINE KEGIATAN</h1>
+                <div class="timeline-carousel">
+                    <div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
+                        <!--Timeline item-->
+                        <div class="timeline-carousel__item">
+                            <div class="timeline-carousel__image">
+                                <div class="media-wrapper media-wrapper--overlay" style="background: url('images/bg/climbing_p.jpg') center center; background-size:cover;"></div>
+                            </div>
+                            <div class="timeline-carousel__item-inner">
+                                <span class="year">Every Year</span>
+                                <span class="month">October</span>
+                                <p>Expo UKM, Pembukaan Pendaftaran</p>
+                            </div>
+                        </div>
+                    <!--/Timeline item-->
+                    
+                        <!--Timeline item-->
+                        <div class="timeline-carousel__item">
+                            <div class="timeline-carousel__image">
+                                <div class="media-wrapper media-wrapper--overlay" style="background: url('images/bg/caving_p.jpg') center center; background-size:cover;"></div>
+                            </div>
+                            <div class="timeline-carousel__item-inner">
+                                <div class="pointer"></div>
+                                <span class="month">November</span>
+                                <p>Pendaftaran Anggota Mahitala</p>
+                            </div>
+                        </div>
+                    <!--/Timeline item-->
+                    
+                    <!--Timeline item-->
+                        <div class="timeline-carousel__item">
+                            <div class="timeline-carousel__image">
+                                <div class="media-wrapper media-wrapper--overlay" style="background: url('images/bg/diving_p.jpg') center center; background-size:cover;"></div>
+                            </div>
+                            <div class="timeline-carousel__item-inner">
+                                <div class="pointer"></div>
+                                <span class="month">November-January</span>
+                                <p>Diklatsar Mahitala</p>
+                            </div>
+                        </div>
+                    <!--/Timeline item-->
+                
+                    <!--Timeline item-->
+                        <div class="timeline-carousel__item">
+                            <div class="timeline-carousel__image">
+                                <div class="media-wrapper media-wrapper--overlay" style="background: url('images/bg/pmt_p.jpg') center center; background-size:cover;"></div>
+                            </div>
+                            <div class="timeline-carousel__item-inner">
+                                <div class="pointer"></div>
+                                <span class="month">February-April</span>
+                                <p>Bulan Pengenalan Kegiatan Mahitala</p>
+                            </div>
+                        </div>
+                    <!--/Timeline item-->
+                    
+                    <!--Timeline item-->
+                        <div class="timeline-carousel__item">
+                            <div class="timeline-carousel__image">
+                                <div class="media-wrapper media-wrapper--overlay" style="background: url('images/bg/rafting_p.jpg') center center; background-size:cover;"></div>
+                            </div>
+                            <div class="timeline-carousel__item-inner">
+                                <div class="pointer"></div>
+                                <span class="month">July</span>
+                                <p>Try Out Wandering Season</p>
+                            </div>
+                        </div>
+                    <!--/Timeline item-->
+                    
+                    <!--Timeline item-->
+                        <div class="timeline-carousel__item">
+                            <div class="timeline-carousel__image">
+                                <div class="media-wrapper media-wrapper--overlay" style="background: url('images/bg/mountaineering_p.jpg') center center; background-size:cover;"></div>
+                            </div>
+                            <div class="timeline-carousel__item-inner">
+                                <div class="pointer"></div>
+                                <span class="month">August</span>
+                                <p>Wandering Season Mahitala UNPAR</p>
+                            </div>
+                        </div>
+                    <!--/Timeline item-->
+                    </div>
+                </div>
+                <!--Timeline carousel-->
+            </div>
             <div id="wrapper">
                 <div id="magazine"></div>
                 <!-- content -->	
@@ -458,6 +546,7 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
+        
         <script>
             imageBook = "1";
             imageBookPath = "images/magazine/";
@@ -465,15 +554,17 @@
         </script>
 
         <!-- Plugin JavaScript -->
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/jquery.fittext.js"></script>
+        <script type="text/javascript" src="js/jquery.slick.min.js"></script>   
+        <script src="js/jquery.easing.min.js"></script>        
+        <script src="js/jquery.fittext.js"></script>        
         <script src="js/wow.min.js"></script>
         <!-- Custom Theme JavaScript -->
         <script src="js/creative.js"></script>
 		<script src="map/leaflet/leaflet.js"></script>
 		<script src="map/assets/geo.js"></script>
 		<script src="map/assets/datarekamjejak.js"></script>
-		<script src="map/assets/script.js"></script>
+        <script src="map/assets/script.js"></script>
+        <script type="text/javascript" src="js/timeline.js"></script>
 
         <link rel="stylesheet" href="./wow_book/wow_book.css" type="text/css" />
         <style>
