@@ -4255,3 +4255,23 @@ section {
    -webkit-transform: translate3d(0, 0, 0) rotateZ(1deg) rotateY(18deg);
 	}
 }
+
+.angkatan-area .hs_init{
+	height: 10px;
+}
+
+.angkatan-area .hs_init:before{
+	height: 10px;
+} 
+
+.background-youtube {
+	top: 0 !important;
+	width: 100%;
+	height: 100%;
+}
+
+.background-youtube iframe {
+	position: relative;
+	top: 0;
+	left: 0;
+}
