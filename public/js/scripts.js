@@ -947,7 +947,17 @@
      };
      //   Video------------------
      var v = $(".background-youtube").data("vid");
-     $(".background-youtube").append('<iframe frameborder="0" src="https://www.youtube.com/embed/' + v + '?controls=0&loop=1&autoplay=1&playlist=' + v + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+    //  var f = $(".background-youtube").data("mv");
+    //  $(".background-youtube").YTPlayer({
+    //      fitToBackground: true,
+    //      videoId: v,
+    //      pauseOnScroll: true,
+    //      mute: f,
+    //      callback: function() {
+    //          var a = $(".background-video").data("ytPlayer").player;
+    //      }
+    //  });
+     $(".background-youtube").append('<iframe frameborder="0" src="https://www.youtube.com/embed/' + v + '?mute=1&controls=0&loop=1&autoplay=1&playlist=' + v + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 
      var w = $(".background-vimeo").data("vim");
      $(".background-vimeo").append('<iframe src="//player.vimeo.com/video/' + w + '?background=1"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>');
